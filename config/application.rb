@@ -23,8 +23,8 @@ module JokeApi
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     # IF RAILS 6 or knock not working, remove knock and update to this instead  
-    # config.load_defaults 6.1 and config.autoloader = :classic
-    config.load_defaults 6.1
+    config.load_defaults 6.1 and config.autoloader = :classic
+    # config.load_defaults 6.1
 
     # Configuration for the application, engines, and railties goes here.
     #

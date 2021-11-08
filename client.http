@@ -4,6 +4,7 @@ GET http://localhost:3000/api/jokes
 ### Successfully posts a joke
 POST http://localhost:3000/api/jokes
 Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzY0MzgzNzUsInN1YiI6M30.M7FFfP5RcrU0jMi_ifCBg0Hp7Kip0ffCqMwDkE7XtRo
 
 {
   "category_id": 1,
@@ -19,7 +20,7 @@ Content-Type: application/json
 }
 
 ### show joke id: 1
-GET http://localhost:3000/api/jokes
+GET http://localhost:3000/api/jokes/1
 
 ### unsuccessfully show  show joke id: 1000
 GET http://localhost:3000/api/jokes/1000
@@ -27,6 +28,7 @@ GET http://localhost:3000/api/jokes/1000
 ### successfully update joke id: 1
 PUT http://localhost:3000/api/jokes/1
 Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzY0Mzg3NjQsInN1YiI6Mn0.W054YLIgwviE3ytIFahk-iT832jU0cjUaMEqbFEk5CY
 
 {
   "body": "A funny programming joke",
@@ -41,3 +43,32 @@ DELETE http://localhost:3000/api/jokes/1000
 
 ### random joke
 GET http://localhost:3000/api/jokes/random?category=puns
+
+### Create user
+POST http://localhost:3000/api/auth/sign_up
+Content-Type: application/json
+
+{
+  "username": "Bella4",
+  "email": "bella4@asdf.com",
+  "password": "password4",
+  "password_confirmation": "password4"
+}
+
+### Sign in with correct details
+POST http://localhost:3000/api/auth/sign_in
+Content-Type: application/json
+
+{
+  "email": "bella7@test.com",
+  "password": "password7"
+}
+
+### Sign in with incorrect details
+POST http://localhost:3000/api/auth/sign_in
+Content-Type: application/json
+
+{
+  "email": "bella4@asdf.com",
+  "password": "password"
+}
